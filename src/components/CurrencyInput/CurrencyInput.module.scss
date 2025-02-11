@@ -1,33 +1,61 @@
 .inputContainer {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 15px;
 	align-items: center;
 }
 
-.input {
-	padding: 10px;
-	width: 100%;
-	max-width: 200px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	transition: border-color 0.3s ease;
-}
-
+.input,
 .select {
-	padding: 10px;
+	padding: 15px;
 	width: 100%;
-	max-width: 200px;
+	max-width: 250px;
 	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	background-color: white;
-	transition: border-color 0.3s ease;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+	background-color: #ffffff;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input:focus,
 .select:focus {
 	outline: none;
 	border-color: #007bff;
+	box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.input::placeholder,
+.select {
+	color: #aaa;
+	font-weight: 300;
+}
+
+.input {
+	font-weight: bold;
+}
+
+.select {
+	background-color: #f7f7f7;
+	color: #333;
+	font-weight: 400;
+}
+
+.input:disabled,
+.select:disabled {
+	background-color: #e0e0e0;
+	cursor: not-allowed;
+}
+
+.inputContainer {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+	.input,
+	.select {
+		max-width: 100%;
+	}
 }

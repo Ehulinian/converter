@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './CurrencyInput.module.scss'
 
 interface CurrencyInputProps {
 	amount: number
@@ -14,14 +15,17 @@ export const CurrencyInput: React.FC<CurrencyInputProps> = ({
 	onCurrencyChange,
 }) => {
 	return (
-		<div>
+		<div className={styles.inputContainer}>
 			<input
+				className={styles.input}
 				type='number'
 				value={amount}
 				onChange={e => onAmountChange(parseFloat(e.target.value))}
 				min='0'
+				placeholder='Enter amount'
 			/>
 			<select
+				className={styles.select}
 				value={currency}
 				onChange={e =>
 					onCurrencyChange(e.target.value as 'UAH' | 'USD' | 'EUR')
